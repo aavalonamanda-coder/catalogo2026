@@ -14,18 +14,20 @@
   O QUE VOCÊ EDITA AQUI, AMANDA
   ============================================================
   1. IMAGENS (todas na mesma pasta deste arquivo, no GitHub):
-     imagem01.jpg  capa no computador, horizontal 16:9 (1920 x 1080 px)
-     imagem02.jpg  capa no celular, vertical 9:16 (1080 x 1920 px)
-     imagem03.jpg  01 Workshop, quadrada (600 x 600 px)
-     imagem04.jpg  02 Akitu, quadrada (600 x 600 px)
-     imagem05.jpg  03 A Grande Virada, quadrada (600 x 600 px)
-     imagem06.jpg  04 Carta de Travessia, quadrada (600 x 600 px)
-     imagem07.jpg  05 Mapa de Navegação, quadrada (600 x 600 px)
+     imagem01      capa no computador, horizontal 16:9 (1920 x 1080 px)
+     imagem02      capa no celular, 1080 x 960 px
+     imagem03      01 Workshop, quadrada (600 x 600 px)
+     imagem04      02 Akitu, quadrada (600 x 600 px)
+     imagem05      03 A Grande Virada, quadrada (600 x 600 px)
+     imagem06      04 Carta de Travessia, quadrada (600 x 600 px)
+     imagem07      05 Mapa de Navegação, quadrada (600 x 600 px)
      Na capa o título fica centralizado, da metade da imagem para baixo.
      Deixe essa área escura para a letra ler bem.
 
-  ATENÇÃO: o GitHub diferencia maiúscula de minúscula. Os nomes têm
-  que ser exatamente esses, tudo minúsculo, terminando em .jpg.
+  Pode ser .jpg, .jpeg, .png ou .webp: a página testa as quatro.
+  Se as imagens ficarem numa subpasta, escreva o nome dela em PASTA,
+  no bloco CONFIGURAÇÃO lá no fim (ex.: "imagens/").
+  O GitHub diferencia maiúscula de minúscula: imagem01, não Imagem01.
 
   2. LINKS: no bloco <script> lá no fim do arquivo,
      procure "CONFIGURAÇÃO". É o único lugar que você precisa mexer.
@@ -104,8 +106,8 @@ a { color:inherit; }
 
 /* ---------- 1. capa ---------- */
 .hero { position:relative; min-height:100vh; min-height:100svh; background:var(--surface); color:var(--ink); overflow:hidden; display:flex; flex-direction:column; }
-.hero picture, .hero picture img { position:absolute; inset:0; width:100%; height:100%; }
-.hero picture img { object-fit:cover; object-position:center; }
+.hero__bg, .hero__bg img { position:absolute; inset:0; width:100%; height:100%; }
+.hero__bg img { object-fit:cover; object-position:center; }
 .hero__top, .hero__bottom { position:relative; z-index:1; padding:var(--space-6) var(--pad); }
 .hero__top { display:flex; justify-content:space-between; gap:var(--space-5); flex-wrap:wrap; }
 .hero__bottom { margin-top:auto; padding-bottom:var(--space-8); }
@@ -127,6 +129,7 @@ a { color:inherit; }
 .card + .card { padding:0 0 0 var(--space-7); border-left:1px solid var(--rule); }
 .card__head { display:grid; grid-template-columns:160px 1fr; gap:var(--space-5); align-items:start; margin-bottom:var(--space-6); }
 .thumb { position:relative; aspect-ratio:1/1; background:var(--media); overflow:hidden; }
+.thumb.is-loaded::after { display:none; }
 .thumb::after { content:"1:1"; position:absolute; left:var(--space-2); bottom:var(--space-2); font-family:var(--font-mono); font-size:11px; color:var(--ink-muted); }
 .thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; }
 .card__id .index { display:block; margin-bottom:var(--space-3); }
@@ -167,6 +170,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
 .dims--one .dims__plus { padding:0; }
 
 /* ---------- fecho ---------- */
+.closing__2 { display:block; margin-top:var(--space-4); }
 .closing { font-family:var(--font-sans); font-weight:700; font-size:48px; line-height:1.02; letter-spacing:-.035em; text-align:center; max-width:1000px; margin:0 auto; }
 .typed {
   font-family:var(--font-mono); font-size:15px; line-height:1.5; letter-spacing:.02em; text-transform:uppercase;
@@ -183,11 +187,16 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
 @media (max-width:720px) {
   :root { --pad:var(--space-5); }
   .section { padding:var(--space-8) var(--pad); }
-  .hero__top { padding-top:var(--space-5); }
+  .hero { min-height:calc(100vw * 960 / 1080); }
+  .hero__top { padding-top:var(--space-4); padding-bottom:var(--space-4); }
+  .hero__bottom { padding-top:var(--space-2); }
+  .hero__kicker { margin-bottom:var(--space-2); }
+  .hero__foot { margin-top:var(--space-4); padding-top:var(--space-3); }
+  .hero__lead { font-size:16px; }
   .hero__top .hide-m { display:none; }
-  .hero__bottom { padding-bottom:var(--space-7); }
+  .hero__bottom { padding-bottom:var(--space-5); }
   .hero__title { font-size:24vw; }
-  .hero__years { font-size:13vw; }
+  .hero__years { font-size:11vw; margin-top:var(--space-3); }
   .hero__foot { flex-direction:column; align-items:center; }
   .headline, .headline-light { font-size:40px; }
   .group-head { grid-template-columns:1fr; margin-bottom:var(--space-7); }
@@ -212,10 +221,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
 
 <!-- ============ 1. CAPA ============ -->
 <header class="hero" data-theme="preto">
-  <picture>
-    <source media="(max-width: 720px)" srcset="imagem02.jpg">
-    <img src="imagem01.jpg" alt="Virada 2026 \\ 2027" fetchpriority="high">
-  </picture>
+  <div class="hero__bg" data-img-web="imagem01" data-img-cel="imagem02" data-alt="Virada 2026 \\ 2027"></div>
 
   <div class="hero__top field">
     <span>Escola Travessias</span>
@@ -248,7 +254,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
       <!-- 01 WORKSHOP -->
       <article class="card" id="workshop">
         <div class="card__head">
-          <div class="thumb"><img src="imagem03.jpg" alt="Workshop A Vida que vem Depois" loading="lazy" onerror="this.remove()"></div>
+          <div class="thumb" data-img="imagem03" data-alt="Workshop A Vida que vem Depois"></div>
           <div class="card__id">
             <span class="index">01</span>
             <h3 class="card__title">A vida que<span class="headline-light">vem depois</span></h3>
@@ -269,7 +275,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
       <!-- 02 RITUAL -->
       <article class="card" id="ritual">
         <div class="card__head">
-          <div class="thumb"><img src="imagem04.jpg" alt="Akitu, Ritual da Virada" loading="lazy" onerror="this.remove()"></div>
+          <div class="thumb" data-img="imagem04" data-alt="Akitu, Ritual da Virada"></div>
           <div class="card__id">
             <span class="index">02</span>
             <h3 class="card__title">Akitu<span class="headline-light">ritual da virada</span></h3>
@@ -296,7 +302,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
     <div class="pair">
       <article class="card card--solo">
         <div class="card__head">
-          <div class="thumb"><img src="imagem05.jpg" alt="A Grande Virada, Workshop + Ritual" loading="lazy" onerror="this.remove()"></div>
+          <div class="thumb" data-img="imagem05" data-alt="A Grande Virada, Workshop + Ritual"></div>
           <div class="card__id">
             <span class="index">03</span>
             <h3 class="card__title">A Grande Virada<span class="headline-light">Workshop + Ritual</span></h3>
@@ -329,7 +335,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
       <!-- 04 CARTA -->
       <article class="card" id="carta">
         <div class="card__head">
-          <div class="thumb"><img src="imagem06.jpg" alt="Carta de Travessia" loading="lazy" onerror="this.remove()"></div>
+          <div class="thumb" data-img="imagem06" data-alt="Carta de Travessia"></div>
           <div class="card__id">
             <span class="index">04</span>
             <h3 class="card__title">Carta de<span class="headline-light">travessia</span></h3>
@@ -358,7 +364,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
       <!-- 05 MAPA -->
       <article class="card" id="mapa">
         <div class="card__head">
-          <div class="thumb"><img src="imagem07.jpg" alt="Mapa de Navegação" loading="lazy" onerror="this.remove()"></div>
+          <div class="thumb" data-img="imagem07" data-alt="Mapa de Navegação"></div>
           <div class="card__id">
             <span class="index">05</span>
             <h3 class="card__title">Mapa de<span class="headline-light">navegação</span></h3>
@@ -390,7 +396,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
 <!-- ============ 5. FECHO ============ -->
 <section class="section" data-theme="jornal">
   <div class="wrap">
-    <p class="closing">O ano vai virar de qualquer jeito. Resta saber se você vai só assistir, mais uma vez, ou vai catar o leme desse barco pra navegar outros horizontes.</p>
+    <p class="closing">O ano vai virar de qualquer jeito!<span class="closing__2">Resta saber se você vai ficar só assistindo de novo, ou se vai catar o leme desse barco pra navegar os SEUS horizontes.</span></p>
 
   </div>
   <footer class="footer">
@@ -413,6 +419,7 @@ var LINKS = {
   carta:    "https://www.avalonamanda.com/t-carta",   // página de pagamento da Carta de Travessia
   mapa:     "https://www.avalonamanda.com/t-mapa"    // página de pagamento/agendamento do Mapa de Navegação
 };
+var PASTA = "";   // deixe vazio se as imagens estão junto com o index.html; se estiverem numa subpasta, ex.: "imagens/"
 var INFO = {
   "workshop-hora": "09:00"   // ex.: "15:00"
 };
@@ -426,6 +433,25 @@ var INFO = {
     var href = LINKS[el.dataset.link];
     if (href) { el.href = href; el.target = "_blank"; el.rel = "noopener"; }
   });
+})();
+/* IMAGENS: procura imagemXX em .jpg, .jpeg, .png ou .webp */
+(function () {
+  var EXT = ["jpg", "jpeg", "png", "webp"];
+  function carregar(box, nome) {
+    var old = box.querySelector("img"); if (old) old.remove();
+    var img = new Image(), i = 0;
+    img.alt = box.getAttribute("data-alt") || "";
+    img.decoding = "async";
+    img.onload = function () { box.insertBefore(img, box.firstChild); box.classList.add("is-loaded"); };
+    img.onerror = function () { i += 1; if (i < EXT.length) img.src = PASTA + nome + "." + EXT[i]; };
+    img.src = PASTA + nome + "." + EXT[0];
+  }
+  document.querySelectorAll("[data-img]").forEach(function (box) { carregar(box, box.getAttribute("data-img")); });
+  var hero = document.querySelector(".hero__bg");
+  var mq = window.matchMedia("(max-width: 720px)");
+  function capa() { carregar(hero, mq.matches ? hero.getAttribute("data-img-cel") : hero.getAttribute("data-img-web")); }
+  capa();
+  if (mq.addEventListener) mq.addEventListener("change", capa); else mq.addListener(capa);
 })();
 </script>
 </body>
