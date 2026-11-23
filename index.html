@@ -101,6 +101,7 @@ a { color:inherit; }
   text-decoration:none; transition:background 160ms, color 160ms;
 }
 .btn:hover { background:transparent; color:var(--ink); }
+.arrow { width:11px; height:11px; flex:none; display:block; }
 .btn--outline { background:transparent; color:var(--ink); }
 .btn--outline:hover { background:var(--ink); color:var(--on-ink); }
 
@@ -137,7 +138,7 @@ a { color:inherit; }
 .card__num { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:var(--space-5); }
 .card__title { font-size:44px; line-height:.98; font-weight:700; letter-spacing:-.03em; margin:0 0 var(--space-4); }
 .card__title .headline-light { font-size:inherit; letter-spacing:inherit; }
-.card__hook { font-size:24px; line-height:1.2; margin:0 0 var(--space-5); color:var(--ink-soft); }
+.card__hook { font-weight:700 !important; font-size:24px; line-height:1.2; margin:0 0 var(--space-5); color:var(--ink-soft); }
 .card__text { margin:0 0 var(--space-6); max-width:var(--layout-text); }
 .facts { display:grid; grid-template-columns:1fr 1fr; margin:0 0 var(--space-6); border-top:1px solid var(--rule-soft); }
 .facts > div { padding:var(--space-3) var(--space-4) var(--space-3) 0; border-bottom:1px solid var(--rule-soft); }
@@ -159,8 +160,8 @@ a { color:inherit; }
 details.policy { margin-top:var(--space-5); border-top:1px solid var(--rule-soft); padding-top:var(--space-3); }
 details.policy summary { cursor:pointer; list-style:none; color:var(--ink-muted); }
 details.policy summary::-webkit-details-marker { display:none; }
-details.policy summary::after { content:"  ↘"; }
-details.policy[open] summary::after { content:"  ↗"; }
+details.policy summary::after { content:"  \2198\FE0E"; }
+details.policy[open] summary::after { content:"  \2197\FE0E"; }
 details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; color:var(--ink-muted); max-width:var(--layout-text); }
 
 /* ---------- 3. combo ---------- */
@@ -261,14 +262,14 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
             <span class="field">[ workshop ao vivo ]</span>
           </div>
         </div>
-        <p class="card__hook serif-italic">Talvez você não precise de mais metas de sucesso mas sim de espaço para questionar os deveres que aprendeu a obedecer.</p>
+        <p class="card__hook serif-italic">Talvez você não precise de mais metas de sucesso mas sim de espaço para questionar as regras que aprendeu a obedecer.</p>
         <p class="card__text body">Um workshop de processo criativo e autoconhecimento para conseguir encerrar o ciclo que termina sem culpa e aprender a escolher metas que realmente façam sentido para a sua alma.</p>
         <dl class="facts">
           <div><dt class="field">Data</dt><dd class="body-s">13.12</dd></div>
           <div><dt class="field">Hora</dt><dd class="body-s" data-info="workshop-hora"></dd></div>
         </dl>
         <div class="card__buy">
-          <a class="btn btn--outline" data-link="workshop" href="#">Ver opção <span aria-hidden="true">↘</span></a>
+          <a class="btn btn--outline" data-link="workshop" href="#">Ver opção <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2 L10 10 M10 3.5 V10 H3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg></a>
         </div>
       </article>
 
@@ -289,7 +290,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
           <div><dt class="field">Hora</dt><dd class="body-s">21:00</dd></div>
         </dl>
         <div class="card__buy">
-          <a class="btn btn--outline" data-link="ritual" href="#">Ver opção <span aria-hidden="true">↘</span></a>
+          <a class="btn btn--outline" data-link="ritual" href="#">Ver opção <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2 L10 10 M10 3.5 V10 H3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg></a>
         </div>
       </article>
     </div>
@@ -316,7 +317,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
           <li><span>02</span>Ritual da Virada \\ AKITU</li>
         </ol>
         <div class="card__buy">
-          <a class="btn btn--outline" data-link="combo" href="#">Ver opção <span aria-hidden="true">↘</span></a>
+          <a class="btn btn--outline" data-link="combo" href="#">Ver opção <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2 L10 10 M10 3.5 V10 H3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg></a>
         </div>
       </article>
     </div>
@@ -353,7 +354,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
           </ul>
         </div>
         <div class="card__buy">
-          <a class="btn btn--outline" data-link="carta" href="#">Ver opção <span aria-hidden="true">↘</span></a>
+          <a class="btn btn--outline" data-link="carta" href="#">Ver opção <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2 L10 10 M10 3.5 V10 H3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg></a>
         </div>
         <details class="policy">
           <summary class="field">Política de cancelamento</summary>
@@ -382,7 +383,7 @@ details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; c
           </ul>
         </div>
         <div class="card__buy">
-          <a class="btn btn--outline" data-link="mapa" href="#">Ver opção <span aria-hidden="true">↘</span></a>
+          <a class="btn btn--outline" data-link="mapa" href="#">Ver opção <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2 L10 10 M10 3.5 V10 H3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg></a>
         </div>
         <details class="policy">
           <summary class="field">Política de cancelamento</summary>
