@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virada 2026 → 2027 · Escola Travessias</title>
+<meta name="description" content="Catálogo de fim de ano da Escola Travessias: ritual Akitu, workshop A Vida que Vem Depois, o combo A Grande Virada, Carta de Travessia e Mapa de Navegação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+<!--
+  ============================================================
+  O QUE VOCÊ EDITA AQUI, AMANDA
+  ============================================================
+  1. IMAGENS (todas na mesma pasta deste arquivo, no GitHub):
+     imagem01.jpg  capa no computador, horizontal 16:9 (1920 x 1080 px)
+     imagem02.jpg  capa no celular, vertical 9:16 (1080 x 1920 px)
+     imagem03.jpg  01 Workshop, quadrada (600 x 600 px)
+     imagem04.jpg  02 Akitu, quadrada (600 x 600 px)
+     imagem05.jpg  03 A Grande Virada, quadrada (600 x 600 px)
+     imagem06.jpg  04 Carta de Travessia, quadrada (600 x 600 px)
+     imagem07.jpg  05 Mapa de Navegação, quadrada (600 x 600 px)
+     Na capa o título fica centralizado, da metade da imagem para baixo.
+     Deixe essa área escura para a letra ler bem.
+
+  ATENÇÃO: o GitHub diferencia maiúscula de minúscula. Os nomes têm
+  que ser exatamente esses, tudo minúsculo, terminando em .jpg.
+
+  2. LINKS: no bloco <script> lá no fim do arquivo,
+     procure "CONFIGURAÇÃO". É o único lugar que você precisa mexer.
+  ============================================================
+-->
+
+<style>
+/* ---------- Acervo: tokens ---------- */
+:root, [data-theme="papel"] {
+  --base-papel:#f4f3ef; --base-branco:#ffffff; --base-jornal:#e9e5dc; --base-cha:#e4e5d7;
+  --base-areia:#d6d0c4; --base-salvia:#c9c9b1; --base-rose:#d8cecc; --base-cinza:#d3d3d3;
+  --base-grafite:#474642; --base-tinta:#121212; --base-carvao:#161616; --base-sepia:#211e19; --base-preto:#000;
+  --surface:var(--base-papel); --surface-raised:var(--base-branco); --media:var(--base-cinza);
+  --ink:var(--base-tinta); --ink-soft:var(--base-grafite); --ink-muted:#5c5a55;
+  --rule:var(--ink); --rule-soft:#12121229; --ink-ghost:#1212121c; --on-ink:var(--surface); --focus:var(--ink);
+}
+[data-theme="jornal"] { --surface:var(--base-jornal); --surface-raised:var(--base-papel); --ink-muted:#55524c; }
+/* COR DO COMBO: troque o código abaixo pelo azul da página do Akitu */
+[data-theme="combo"] { --surface:var(--cor-combo); --ink-soft:#2b2b2b; --ink-muted:#3a3a3a; --on-ink:var(--cor-combo); }
+:root { --cor-combo:#A3B0C7; }
+[data-theme="salvia"] { --surface:var(--base-salvia); --surface-raised:var(--base-cha); --ink-soft:#3d3d33; --ink-muted:#45453a; --on-ink:var(--base-salvia); }
+[data-theme="preto"] {
+  --surface:var(--base-preto); --surface-raised:var(--base-carvao); --media:var(--base-sepia);
+  --ink:var(--base-papel); --ink-soft:var(--base-cinza); --ink-muted:#c9c7c1;
+  --rule:var(--ink); --rule-soft:#f4f3ef33; --ink-ghost:#f4f3ef1f; --on-ink:var(--base-preto); --focus:var(--ink);
+}
+:root {
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px; --space-6:32px;
+  --space-7:48px; --space-8:64px; --space-9:96px; --space-10:144px;
+  --layout-max:1440px; --layout-text:640px;
+  --font-sans:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --font-mono:"DM Mono","Courier New",ui-monospace,monospace;
+  --pad:var(--space-7);
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--base-papel); color:var(--base-tinta); font-family:var(--font-sans); -webkit-font-smoothing:antialiased; }
+img { display:block; max-width:100%; }
+a { color:inherit; }
+:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+
+.section { background:var(--surface); color:var(--ink); padding:var(--space-9) var(--pad); }
+.wrap { max-width:var(--layout-max); margin:0 auto; }
+.rule-top { border-top:1px solid var(--rule); }
+
+/* tipografia */
+.field, .caption, .label { text-transform:uppercase; }
+.field, .caption, .index, .typed { font-feature-settings:'zero' 1; }
+.field { font-family:var(--font-mono); font-size:11px; line-height:14px; font-weight:500; letter-spacing:.06em; }
+.caption { font-family:var(--font-mono); font-size:11px; line-height:15px; font-weight:400; letter-spacing:.02em; color:var(--ink-muted); }
+.label { font-family:var(--font-sans); font-size:12px; line-height:16px; font-weight:600; letter-spacing:.08em; }
+.index { font-family:var(--font-mono); font-size:64px; line-height:1; font-weight:300; letter-spacing:-.02em; color:var(--ink-soft); }
+.numeral { font-family:var(--font-mono); font-size:80px; line-height:.95; font-weight:300; letter-spacing:-.04em; font-variant-numeric:slashed-zero; font-feature-settings:'zero' 1; }
+.headline, .headline-light { font-size:64px; line-height:.95; letter-spacing:-.035em; margin:0; }
+.headline { font-weight:700; }
+.headline-light { font-weight:400; display:block; }
+.serif-italic { font-family:var(--font-serif); font-style:italic; font-weight:400; font-variation-settings:'opsz' 36; }
+.lead { font-size:22px; line-height:1.36; letter-spacing:-.01em; }
+.body { font-size:17px; line-height:1.55; }
+.body-s { font-size:14px; line-height:1.45; }
+.muted { color:var(--ink-muted); }
+
+/* botão */
+.btn {
+  display:inline-flex; align-items:center; gap:var(--space-3); min-height:48px; padding:0 var(--space-6);
+  border-radius:999px; border:1px solid var(--ink); background:var(--ink); color:var(--on-ink);
+  font-family:var(--font-sans); font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+  text-decoration:none; transition:background 160ms, color 160ms;
+}
+.btn:hover { background:transparent; color:var(--ink); }
+.btn--outline { background:transparent; color:var(--ink); }
+.btn--outline:hover { background:var(--ink); color:var(--on-ink); }
+
+/* ---------- 1. capa ---------- */
+.hero { position:relative; min-height:100vh; min-height:100svh; background:var(--surface); color:var(--ink); overflow:hidden; display:flex; flex-direction:column; }
+.hero picture, .hero picture img { position:absolute; inset:0; width:100%; height:100%; }
+.hero picture img { object-fit:cover; object-position:center; }
+.hero__top, .hero__bottom { position:relative; z-index:1; padding:var(--space-6) var(--pad); }
+.hero__top { display:flex; justify-content:space-between; gap:var(--space-5); flex-wrap:wrap; }
+.hero__bottom { margin-top:auto; padding-bottom:var(--space-8); }
+.hero__kicker { margin:0 0 var(--space-4); text-align:center; }
+.hero__title {
+  margin:0; font-weight:800; text-transform:uppercase; letter-spacing:-.055em; line-height:.82;
+  font-size:clamp(88px, 21vw, 340px); text-align:center;
+}
+.hero__years { font-family:var(--font-serif); font-style:italic; font-weight:300; font-variation-settings:'opsz' 72; font-size:clamp(44px, 6.4vw, 96px); line-height:1; letter-spacing:-.02em; margin:var(--space-5) 0 0; text-align:center; }
+.hero__foot { display:flex; justify-content:center; align-items:flex-end; gap:var(--space-6); flex-wrap:wrap; margin-top:var(--space-6); padding-top:var(--space-5); border-top:1px solid var(--rule); }
+.hero__lead { margin:0 auto; text-align:center; }
+
+/* ---------- grupos de produtos ---------- */
+.group-head { display:grid; grid-template-columns:1fr auto; align-items:end; gap:var(--space-5); padding-bottom:var(--space-5); border-bottom:1px solid var(--rule); margin-bottom:var(--space-8); }
+.group-head .caption { text-align:right; }
+
+.pair { display:grid; grid-template-columns:1fr 1fr; gap:0; }
+.card { padding:0 var(--space-7) 0 0; display:flex; flex-direction:column; }
+.card + .card { padding:0 0 0 var(--space-7); border-left:1px solid var(--rule); }
+.card__head { display:grid; grid-template-columns:160px 1fr; gap:var(--space-5); align-items:start; margin-bottom:var(--space-6); }
+.thumb { position:relative; aspect-ratio:1/1; background:var(--media); overflow:hidden; }
+.thumb::after { content:"1:1"; position:absolute; left:var(--space-2); bottom:var(--space-2); font-family:var(--font-mono); font-size:11px; color:var(--ink-muted); }
+.thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; }
+.card__id .index { display:block; margin-bottom:var(--space-3); }
+.card__id .card__title { margin-bottom:var(--space-3); }
+.card__num { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:var(--space-5); }
+.card__title { font-size:44px; line-height:.98; font-weight:700; letter-spacing:-.03em; margin:0 0 var(--space-4); }
+.card__title .headline-light { font-size:inherit; letter-spacing:inherit; }
+.card__hook { font-size:24px; line-height:1.2; margin:0 0 var(--space-5); color:var(--ink-soft); }
+.card__text { margin:0 0 var(--space-6); max-width:var(--layout-text); }
+.facts { display:grid; grid-template-columns:1fr 1fr; margin:0 0 var(--space-6); border-top:1px solid var(--rule-soft); }
+.facts > div { padding:var(--space-3) var(--space-4) var(--space-3) 0; border-bottom:1px solid var(--rule-soft); }
+.facts dt { margin-bottom:var(--space-1); color:var(--ink-muted); }
+.facts dd { margin:0; }
+.card__buy { margin-top:auto; display:flex; align-items:flex-end; justify-content:flex-start; gap:var(--space-5); flex-wrap:wrap; }
+.price small { display:block; margin-bottom:var(--space-2); }
+.price .numeral { font-size:56px; }
+
+.inclui { border-top:1px solid var(--rule-soft); padding-top:var(--space-3); margin:0 0 var(--space-6); }
+.inclui > .field { display:block; color:var(--ink-muted); margin-bottom:var(--space-3); }
+.inclui ul { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:var(--space-3) var(--space-6); }
+.inclui li { display:flex; align-items:center; gap:var(--space-2); font-family:var(--font-mono); font-size:12px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; }
+.check { display:inline-flex; align-items:center; justify-content:center; width:16px; height:16px; border:1px solid var(--ink); font-size:11px; line-height:1; }
+.dims { list-style:none; margin:0 0 var(--space-6); padding:0; display:grid; grid-template-columns:1fr 1fr; column-gap:var(--space-5); }
+.dims li { display:flex; gap:var(--space-3); padding:var(--space-2) 0; border-bottom:1px solid var(--rule-soft); font-size:14px; line-height:1.35; }
+.dims li span { font-family:var(--font-mono); font-size:12px; color:var(--ink-muted); min-width:20px; padding-top:2px; }
+
+details.policy { margin-top:var(--space-5); border-top:1px solid var(--rule-soft); padding-top:var(--space-3); }
+details.policy summary { cursor:pointer; list-style:none; color:var(--ink-muted); }
+details.policy summary::-webkit-details-marker { display:none; }
+details.policy summary::after { content:"  ↘"; }
+details.policy[open] summary::after { content:"  ↗"; }
+details.policy p { margin:var(--space-3) 0 0; font-size:14px; line-height:1.5; color:var(--ink-muted); max-width:var(--layout-text); }
+
+/* ---------- 3. combo ---------- */
+.dims--one { grid-template-columns:1fr; }
+.dims--one li { border-bottom:0; }
+.dims--one li:last-child { border-bottom:1px solid var(--rule-soft); }
+.dims--one .dims__plus { padding:0; }
+
+/* ---------- fecho ---------- */
+.closing { font-family:var(--font-sans); font-weight:700; font-size:48px; line-height:1.02; letter-spacing:-.035em; text-align:center; max-width:1000px; margin:0 auto; }
+.typed {
+  font-family:var(--font-mono); font-size:15px; line-height:1.5; letter-spacing:.02em; text-transform:uppercase;
+  text-align:justify; max-width:520px; margin:0 auto;
+}
+.footer { display:grid; grid-template-columns:1fr 1fr 1fr; gap:var(--space-5); border-top:1px solid var(--rule-soft); margin:var(--space-9) calc(-1 * var(--pad)) calc(-1 * var(--space-9)); padding:var(--space-5) var(--pad) var(--space-7); }
+.footer > div:nth-child(2) { text-align:center; }
+.footer > div:nth-child(3) { text-align:right; }
+.footer a { text-decoration:underline; text-underline-offset:3px; }
+.footer a:hover { color:var(--ink); }
+.footer p { margin:0 0 var(--space-1); }
+
+/* ---------- celular ---------- */
+@media (max-width:720px) {
+  :root { --pad:var(--space-5); }
+  .section { padding:var(--space-8) var(--pad); }
+  .hero__top { padding-top:var(--space-5); }
+  .hero__top .hide-m { display:none; }
+  .hero__bottom { padding-bottom:var(--space-7); }
+  .hero__title { font-size:24vw; }
+  .hero__years { font-size:13vw; }
+  .hero__foot { flex-direction:column; align-items:center; }
+  .headline, .headline-light { font-size:40px; }
+  .group-head { grid-template-columns:1fr; margin-bottom:var(--space-7); }
+  .group-head .caption { text-align:left; }
+  .pair { grid-template-columns:1fr; }
+  .card { padding:0; }
+  .card + .card { padding:var(--space-8) 0 0; margin-top:var(--space-8); border-left:0; border-top:1px solid var(--rule); }
+  .card__title { font-size:36px; }
+  .card__head { grid-template-columns:104px 1fr; gap:var(--space-4); }
+  .card__id .card__title { font-size:30px; }
+  .card__hook { font-size:21px; }
+  .index { font-size:56px; }
+  .closing { font-size:30px; }
+  .dims { grid-template-columns:1fr; }
+  .price .numeral { font-size:48px; }
+  .footer { grid-template-columns:1fr; margin-bottom:calc(-1 * var(--space-8)); }
+  .footer > div { text-align:center !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. CAPA ============ -->
+<header class="hero" data-theme="preto">
+  <picture>
+    <source media="(max-width: 720px)" srcset="imagem02.jpg">
+    <img src="imagem01.jpg" alt="Virada 2026 \\ 2027" fetchpriority="high">
+  </picture>
+
+  <div class="hero__top field">
+    <span>Escola Travessias</span>
+    <span class="hide-m">[ catálogo de fim de ano ]</span>
+    <span>Amanda Avalon</span>
+  </div>
+
+  <div class="hero__bottom">
+    <p class="hero__kicker field">[ quatro portas para atravessar o ano ]</p>
+    <h1 class="hero__title">Virada</h1>
+    <p class="hero__years">2026 \\ 2027</p>
+    <p class="hero__kicker field" style="margin:var(--space-2) 0 0">[ novembro . dezembro . janeiro ]</p>
+    <div class="hero__foot">
+      <p class="hero__lead lead">Catálogo de final de ano da Escola Travessias</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 2. PARA FECHAR 2026 ============ -->
+<section class="section" id="fechar" data-theme="papel">
+  <div class="wrap">
+    <div class="group-head">
+      <h2 class="headline">para fechar 2026<span class="headline-light">e abraçar 2027</span></h2>
+      <span class="caption">[ encontros coletivos ]</span>
+    </div>
+
+    <div class="pair">
+      <!-- 01 WORKSHOP -->
+      <article class="card" id="workshop">
+        <div class="card__head">
+          <div class="thumb"><img src="imagem03.jpg" alt="Workshop A Vida que vem Depois" loading="lazy" onerror="this.remove()"></div>
+          <div class="card__id">
+            <span class="index">01</span>
+            <h3 class="card__title">A vida que<span class="headline-light">vem depois</span></h3>
+            <span class="field">[ workshop ao vivo ]</span>
+          </div>
+        </div>
+        <p class="card__hook serif-italic">Talvez você não precise de mais metas de sucesso mas sim de espaço para questionar os deveres que aprendeu a obedecer.</p>
+        <p class="card__text body">Um workshop de processo criativo e autoconhecimento para conseguir encerrar o ciclo que termina sem culpa e aprender a escolher metas que realmente façam sentido para a sua alma.</p>
+        <dl class="facts">
+          <div><dt class="field">Data</dt><dd class="body-s">13.12</dd></div>
+          <div><dt class="field">Hora</dt><dd class="body-s" data-info="workshop-hora"></dd></div>
+        </dl>
+        <div class="card__buy">
+          <a class="btn btn--outline" data-link="workshop" href="#">Ver opção <span aria-hidden="true">↘</span></a>
+        </div>
+      </article>
+
+      <!-- 02 RITUAL -->
+      <article class="card" id="ritual">
+        <div class="card__head">
+          <div class="thumb"><img src="imagem04.jpg" alt="Akitu, Ritual da Virada" loading="lazy" onerror="this.remove()"></div>
+          <div class="card__id">
+            <span class="index">02</span>
+            <h3 class="card__title">Akitu<span class="headline-light">ritual da virada</span></h3>
+            <span class="field">[ rito a distância ]</span>
+          </div>
+        </div>
+        <p class="card__hook serif-italic">Na Babilônia, o ano novo começava com purificação e muita festa.</p>
+        <p class="card__text body">Primeiro se queimava o passado, depois se escrevia o destino. Na noite do solstício de verão faremos um rito para jogar as dores no fogo e registrar nossos nomes na tabuinha da fartura. Você recebe fotos, vídeos, áudios e uma leitura de tarot coletiva para 2027.</p>
+        <dl class="facts">
+          <div><dt class="field">Data</dt><dd class="body-s">21.12</dd></div>
+          <div><dt class="field">Hora</dt><dd class="body-s">21:00</dd></div>
+        </dl>
+        <div class="card__buy">
+          <a class="btn btn--outline" data-link="ritual" href="#">Ver opção <span aria-hidden="true">↘</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. COMBO: A GRANDE VIRADA ============ -->
+<section class="section" id="combo" data-theme="combo">
+  <div class="wrap">
+    <div class="pair">
+      <article class="card card--solo">
+        <div class="card__head">
+          <div class="thumb"><img src="imagem05.jpg" alt="A Grande Virada, Workshop + Ritual" loading="lazy" onerror="this.remove()"></div>
+          <div class="card__id">
+            <span class="index">03</span>
+            <h3 class="card__title">A Grande Virada<span class="headline-light">Workshop + Ritual</span></h3>
+            <span class="field">[ combo ]</span>
+          </div>
+        </div>
+        <p class="card__text body">No dia 13 você aprende a olhar de forma prática e afetiva para os fins, para no dia 21 se permitir viver esse encerramento em lugares profundos dentro de si.</p>
+        <ol class="dims dims--one">
+          <li><span>01</span>Workshop \\ A Vida que vem Depois</li>
+          <li class="dims__plus"><span>+</span></li>
+          <li><span>02</span>Ritual da Virada \\ AKITU</li>
+        </ol>
+        <div class="card__buy">
+          <a class="btn btn--outline" data-link="combo" href="#">Ver opção <span aria-hidden="true">↘</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PARA ATRAVESSAR 2027 ============ -->
+<section class="section" id="atravessar" data-theme="papel">
+  <div class="wrap">
+    <div class="group-head">
+      <h2 class="headline">para atravessar 2027<span class="headline-light">com a faca e o queijo na mão</span></h2>
+      <span class="caption">[ leituras individuais · só para você ]</span>
+    </div>
+
+    <div class="pair">
+      <!-- 04 CARTA -->
+      <article class="card" id="carta">
+        <div class="card__head">
+          <div class="thumb"><img src="imagem06.jpg" alt="Carta de Travessia" loading="lazy" onerror="this.remove()"></div>
+          <div class="card__id">
+            <span class="index">04</span>
+            <h3 class="card__title">Carta de<span class="headline-light">travessia</span></h3>
+            <span class="field">[ tiragem em PDF ]</span>
+          </div>
+        </div>
+        <p class="card__hook serif-italic">O seu ano em dez áreas da vida, para consultar quando precisar.</p>
+        <p class="card__text body">As possibilidades e os desafios de 2027 em cada dimensão, num documento seu para guiar a travessia do próximo ano.</p>
+        <p class="card__text body">As dez dimensões: Arcano do Ano, Arcano Pessoal, Principal Direção, Maior Risco, Maior Potência, Amor e Relações, Dinheiro e Carreira, Propósito e Sonhos, Espiritualidade e Cuidado Pessoal e Conselho Geral.</p>
+        <div class="inclui">
+          <span class="field">Inclui</span>
+          <ul>
+            <li><span class="check" aria-hidden="true">✓</span>Formulário</li>
+            <li><span class="check" aria-hidden="true">✓</span>PDF personalizado</li>
+          </ul>
+        </div>
+        <div class="card__buy">
+          <a class="btn btn--outline" data-link="carta" href="#">Ver opção <span aria-hidden="true">↘</span></a>
+        </div>
+        <details class="policy">
+          <summary class="field">Política de cancelamento</summary>
+          <p>Cancelamentos são aceitos apenas até 24h depois da compra. Fora desse prazo não há devolução do valor. Em caso de parcelamento, o valor das taxas não é devolvido.</p>
+        </details>
+      </article>
+
+      <!-- 05 MAPA -->
+      <article class="card" id="mapa">
+        <div class="card__head">
+          <div class="thumb"><img src="imagem07.jpg" alt="Mapa de Navegação" loading="lazy" onerror="this.remove()"></div>
+          <div class="card__id">
+            <span class="index">05</span>
+            <h3 class="card__title">Mapa de<span class="headline-light">navegação</span></h3>
+            <span class="field">[ leitura ao vivo ]</span>
+          </div>
+        </div>
+        <p class="card__hook serif-italic">Doze meses, mês a mês, de janeiro a dezembro de 2027.</p>
+        <p class="card__text body">Uma Mesa Real, com o baralho cigano inteiro, e a combinação de três cartas para cada mês lida em conjunto: a energia geral de cada um dos doze meses, para você se organizar ao longo do ano.</p>
+        <div class="inclui">
+          <span class="field">Inclui</span>
+          <ul>
+            <li><span class="check" aria-hidden="true">✓</span>Vídeo chamada 1h</li>
+            <li><span class="check" aria-hidden="true">✓</span>Gravação</li>
+            <li><span class="check" aria-hidden="true">✓</span>Resumo em PDF</li>
+          </ul>
+        </div>
+        <div class="card__buy">
+          <a class="btn btn--outline" data-link="mapa" href="#">Ver opção <span aria-hidden="true">↘</span></a>
+        </div>
+        <details class="policy">
+          <summary class="field">Política de cancelamento</summary>
+          <p>Reagendamentos e cancelamentos são aceitos apenas com até 3 dias de antecedência. A tolerância de atraso é de até 10 minutos. Fora desse prazo, ou em caso de não comparecimento, não há devolução do valor.</p>
+        </details>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. FECHO ============ -->
+<section class="section" data-theme="jornal">
+  <div class="wrap">
+    <p class="closing">O ano vai virar de qualquer jeito. Resta saber se você vai só assistir, mais uma vez, ou vai catar o leme desse barco pra navegar outros horizontes.</p>
+
+  </div>
+  <footer class="footer">
+    <div class="caption"><p>Escola Travessias</p><p>Amanda Avalon</p></div>
+    <div class="caption"><p>Pagamento na página de cada produto</p></div>
+    <div class="caption"><p>Contato <a href="https://wa.me/message/EU4VCDBX7WORH1" target="_blank" rel="noopener">+55 21 99641-5685</a></p></div>
+  </footer>
+</section>
+
+</main>
+
+<script>
+/* ============================================================
+   CONFIGURAÇÃO · troque só o que está entre aspas
+   ============================================================ */
+var LINKS = {
+  ritual:   "https://aavalonamanda-coder.github.io/ritualakitu/",   // página de vendas do Akitu
+  workshop: "https://aavalonamanda-coder.github.io/vidaquevemdepois/",   // página de vendas do workshop
+  combo:    "",   // checkout ou página do combo A Grande Virada
+  carta:    "https://www.avalonamanda.com/t-carta",   // página de pagamento da Carta de Travessia
+  mapa:     "https://www.avalonamanda.com/t-mapa"    // página de pagamento/agendamento do Mapa de Navegação
+};
+var INFO = {
+  "workshop-hora": "09:00"   // ex.: "15:00"
+};
+/* ============================================================ */
+
+(function () {
+  document.querySelectorAll("[data-info]").forEach(function (el) {
+    el.textContent = INFO[el.dataset.info] || "a definir";
+  });
+  document.querySelectorAll("[data-link]").forEach(function (el) {
+    var href = LINKS[el.dataset.link];
+    if (href) { el.href = href; el.target = "_blank"; el.rel = "noopener"; }
+  });
+})();
+</script>
+</body>
+</html>
